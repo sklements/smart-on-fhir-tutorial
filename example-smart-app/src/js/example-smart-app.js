@@ -31,8 +31,8 @@ var MRN = "";
                   $('#pract').html( identifiers[i].value );
                   if( MRN != "" && NPI != "" )
                   {
-                    window.location = "http://localhost:1080/cernercontext/?partnerId=999999999999999-9999999999999" + 
-                    "&mrn=" + MRN + "&npi=" + NPI ;                 
+//                    window.location = "http://localhost:1080/cernercontext/?partnerId=999999999999999-9999999999999" + 
+//                    "&mrn=" + MRN + "&npi=" + NPI ;                 
                   }                  
                 }
               }
@@ -53,8 +53,8 @@ var MRN = "";
                $('#mrn').html( identifiers[j].value );
                if( MRN != "" && NPI != "" )
                {
-                 window.location = "http://localhost:1080/cernercontext/?partnerId=999999999999999-9999999999999" + 
-                  "&mrn=" + MRN + "&npi=" + NPI ;                         
+//                 window.location = "http://localhost:1080/cernercontext/?partnerId=999999999999999-9999999999999" + 
+//                  "&mrn=" + MRN + "&npi=" + NPI ;                         
                }
             }
           }          
