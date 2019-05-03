@@ -27,14 +27,18 @@ var MRN = "";
           
               for( var i=0 ; i<identifiers.length ; i++ )
               {
-                if( identifiers[i].type.coding[0].code == "PRN" )
+                  if( identifiers[j].type.coding != 'undefined'
+                  	&& identifiers[j].type.coding.length > 0
+                  	&& identifiers[i].type.coding[0].code == "PRN" )
                 {
                   NPI = identifiers[i].value;
                   $('#pract').html( identifiers[i].value );
                   if( MRN != "" && NPI != "" )
                   {
-//                    window.location = "http://localhost:1080/cernercontext/?partnerId=999999999999999-9999999999999" + 
-//                    "&mrn=" + MRN + "&npi=" + NPI ;                 
+// window.location =
+// "http://localhost:1080/cernercontext/?partnerId=999999999999999-9999999999999"
+// +
+// "&mrn=" + MRN + "&npi=" + NPI ;
                   }                  
                 }
               }
@@ -49,14 +53,18 @@ var MRN = "";
           
           for( var j=0 ; j<identifiers.length ; j++ )
           {
-            if( identifiers[j].type.coding[0].code == "MR" )
+            if( identifiers[j].type.coding != 'undefined'
+            	&& identifiers[j].type.coding.length > 0
+            	&& identifiers[j].type.coding[0].code == "MR" )
             {
                MRN = identifiers[j].value;
                $('#mrn').html( identifiers[j].value );
                if( MRN != "" && NPI != "" )
                {
-//                 window.location = "http://localhost:1080/cernercontext/?partnerId=999999999999999-9999999999999" + 
-//                  "&mrn=" + MRN + "&npi=" + NPI ;                         
+// window.location =
+// "http://localhost:1080/cernercontext/?partnerId=999999999999999-9999999999999"
+// +
+// "&mrn=" + MRN + "&npi=" + NPI ;
                }
             }
           }          
