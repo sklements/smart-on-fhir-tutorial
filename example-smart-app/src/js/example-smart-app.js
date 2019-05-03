@@ -13,7 +13,7 @@ var MRN = "";
     function onReady(smart) {
     	console.log('smart: ' + JSON.stringify(smart));
     	
-        $('#fhirid').html(smart.tokenResponse.patient);
+//        $('#fhirid').html(smart.tokenResponse.patient);
 
         var patient = smart.patient;
         var pt = patient.read();
@@ -21,7 +21,8 @@ var MRN = "";
         var practObj = {};
         practObj.type = "Practitioner";
         practObj.id = "605926"; // smart.tokenResponse.user;
-
+        $('#userId').html(smart.tokenResponse.user);
+        
         smart.api.read( practObj ).then( (pract) => {
               var identifiers = pract.data.identifier;
           
@@ -32,7 +33,7 @@ var MRN = "";
                   	&& identifiers[i].type.coding[0].code == "PRN" )
                 {
                   NPI = identifiers[i].value;
-                  $('#pract').html( identifiers[i].value );
+                  $('#npi').html( identifiers[i].value );
                   if( MRN != "" && NPI != "" )
                   {
 // window.location =
@@ -58,7 +59,7 @@ var MRN = "";
             	&& identifiers[j].type.coding[0].code == "MR" )
             {
                MRN = identifiers[j].value;
-               $('#mrn').html( identifiers[j].value );
+               p.mrn = MRN;
                if( MRN != "" && NPI != "" )
                {
 // window.location =
@@ -88,7 +89,7 @@ var MRN = "";
   window.drawVisualization = function(p) {
 
     $('#holder').show();
-    $('#fhirid').html(p.id);
+    $('#patientId').html(p.id);
     $('#mrn').html(p.mrn);
   };
 
