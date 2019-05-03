@@ -79,7 +79,7 @@
 		function(context) {
 			drawVisualization(context);
 
-			var url = "http://localhost:1080/cernercontext/?tenantId=" + context.tenantId "&mrn=" + context.patient.mrn + "&npi=" + context.practitioner.npi;
+			var url = "http://localhost:1080/cernercontext/?tenantId=" + context.tenantId + "&mrn=" + context.patient.mrn + "&npi=" + context.practitioner.npi;
 			//        	  window.location = url;
 			console.log('launch Mirth Cerner Context channel: ' + url);
 		},
