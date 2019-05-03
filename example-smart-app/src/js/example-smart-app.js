@@ -40,6 +40,7 @@
 				}
 
 				var pract = {};
+				console.log('practitioner.id: ' + practitioner.id);
 				pract.id = practitioner.id;
 				pract.npi = "";
 				identifiers = practitioner.data.identifier;
@@ -78,6 +79,7 @@
 		$('#holder').show();
 		$('#patientId').html(pt.id);
 		$('#mrn').html(pt.mrn);
+		console.log('pract.id: ' + pract.id);
 		$('#practId').html(pract.id);
 		$('#npi').html(pract.npi);
 	};
