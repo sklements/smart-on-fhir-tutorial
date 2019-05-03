@@ -50,12 +50,6 @@
 					}
 				}
 
-				if (pt.mrn != "" && pract.npi != "") {
-					var url = "http://localhost:1080/cernercontext/?partnerId=999999999999999-9999999999999&mrn=" + pt.mrn + "&npi=" + pract.npi;
-					//        	  window.location = url;
-					console.log('launch Mirth Cerner Context channel: ' + url);
-				}
-
 				ret.resolve(pt, pract);
 			});
 		}

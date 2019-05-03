@@ -63,6 +63,10 @@
 		//Display Patient Demographics and Observations if extractData was success
 		function(pt, pract) {
 			drawVisualization(pt, pract);
+
+			var url = "http://localhost:1080/cernercontext/?partnerId=999999999999999-9999999999999&mrn=" + pt.mrn + "&npi=" + pract.npi;
+			//        	  window.location = url;
+			console.log('launch Mirth Cerner Context channel: ' + url);
 		},
 
 		//Display 'Failed to call FHIR Service' if extractData failed
