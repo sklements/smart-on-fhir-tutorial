@@ -11,6 +11,8 @@ var MRN = "";
     }
 
     function onReady(smart) {
+    	console.log('smart: ' + JSON.stringify(smart));
+    	
         $('#fhirid').html(smart.tokenResponse.patient);
 
         var patient = smart.patient;
