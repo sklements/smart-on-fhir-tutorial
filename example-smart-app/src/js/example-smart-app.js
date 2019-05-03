@@ -10,7 +10,7 @@
 		function onReady(smart) {
 			console.log('smart: ' + JSON.stringify(smart));
 
-			$('#smartTenantId').html(smart.tokenResponse.user);
+			$('#smartTenantId').html(smart.tokenResponse.tenant);
 	        $('#smartPatientId').html(smart.tokenResponse.patient);
 			$('#smartUserId').html(smart.tokenResponse.user);
 
