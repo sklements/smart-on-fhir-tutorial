@@ -20,16 +20,16 @@
 			context.practitioner = {};
 			
 			var patient = smart.patient;
-			var pt = patient.read();
+			var patientRead = patient.read();
 
-			var practObj = {};
-			practObj.type = "Practitioner";
-			practObj.id = "605926"; // smart.tokenResponse.user;
+			var practitioner = {};
+			practitioner.type = "Practitioner";
+			practitioner.id = "605926"; // smart.tokenResponse.user;
 
-			var pract = smart.api.read(practObj);
+			var practitionerRead = smart.api.read(practitioner);
 
-			$.when(pt, pract).fail(onError);
-			$.when(pt, pract).done(function (patient, practitioner) {
+			$.when(patientRead, practitionerRead).fail(onError);
+			$.when(patientRead, practitionerRead).done(function (patient, practitioner) {
 
 				console.log('patient: ' + JSON.stringify(patient));
 				console.log('practitioner: ' + JSON.stringify(practitioner));
@@ -86,7 +86,7 @@
 		$('#holder').show();
 		$('#patientId').html(context.patient.id);
 		$('#mrn').html(context.patient.mrn);
-		$('#practId').html(context.practitioner.id);
+		$('#practitionerId').html(context.practitioner.id);
 		$('#npi').html(context.practitioner.npi);
 	};
 
