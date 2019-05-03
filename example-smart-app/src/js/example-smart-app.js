@@ -42,10 +42,11 @@
 					}
 				}
 
+				practitioner = practitioner.data;
 				var pract = {};
 				pract.id = practitioner.id;
 				pract.npi = "";
-				identifiers = practitioner.data.identifier;
+				identifiers = practitioner.identifier;
 
 				for (var i = 0; i < identifiers.length; i++) {
 					if (identifiers[i].type.coding !== undefined
