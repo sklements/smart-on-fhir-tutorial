@@ -32,7 +32,8 @@
 				for (var j = 0; j < identifiers.length; j++) {
 					if (identifiers[j].type.coding !== undefined
 						 && identifiers[j].type.coding.length > 0
-						 && identifiers[j].type.coding[0].code == "MR") {
+						 && identifiers[j].type.coding[0].code == "MR"
+						 && identifiers[j].type.text.search(/^MRN$/i) !== -1) {
 						pt.mrn = identifiers[j].value;
 					}
 				}
@@ -45,7 +46,8 @@
 				for (var i = 0; i < identifiers.length; i++) {
 					if (identifiers[i].type.coding !== undefined
 						 && identifiers[i].type.coding.length > 0
-						 && identifiers[i].type.coding[0].code == "PRN") {
+						 && identifiers[i].type.coding[0].code == "PRN"
+						 && identifiers[i].type.text.search(/^National Provider Identifier$/i) !== -1) {
 						pract.npi = identifiers[i].value;
 					}
 				}
