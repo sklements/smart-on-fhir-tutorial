@@ -27,7 +27,7 @@ var MRN = "";
           
               for( var i=0 ; i<identifiers.length ; i++ )
               {
-                  if( identifiers[i].type.coding != 'undefined'
+                  if( identifiers[i].type.coding !== undefined
                   	&& identifiers[i].type.coding.length > 0
                   	&& identifiers[i].type.coding[0].code == "PRN" )
                 {
@@ -53,7 +53,7 @@ var MRN = "";
           
           for( var j=0 ; j<identifiers.length ; j++ )
           {
-            if( identifiers[j].type.coding != 'undefined'
+            if( identifiers[j].type.coding !== undefined
             	&& identifiers[j].type.coding.length > 0
             	&& identifiers[j].type.coding[0].code == "MR" )
             {
