@@ -10,7 +10,9 @@
 		function onReady(smart) {
 			console.log('smart: ' + JSON.stringify(smart));
 
-			//        $('#fhirid').html(smart.tokenResponse.patient);
+			$('#smartTenantId').html(smart.tokenResponse.user);
+	        $('#smartPatientId').html(smart.tokenResponse.patient);
+			$('#smartUserId').html(smart.tokenResponse.user);
 
 			var patient = smart.patient;
 			var pt = patient.read();
@@ -18,7 +20,6 @@
 			var practObj = {};
 			practObj.type = "Practitioner";
 			practObj.id = "605926"; // smart.tokenResponse.user;
-			$('#userId').html(smart.tokenResponse.user);
 
 			var pract = smart.api.read(practObj);
 
@@ -77,6 +78,7 @@
 		$('#holder').show();
 		$('#patientId').html(pt.id);
 		$('#mrn').html(pt.mrn);
+		$('#practId').html(pract.id);
 		$('#npi').html(pract.npi);
 	};
 
