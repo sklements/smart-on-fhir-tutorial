@@ -76,10 +76,10 @@
 	<script>
 		extractData().then(
 		//Display Patient Demographics and Observations if extractData was success
-		function(pt, pract) {
-			drawVisualization(pt, pract);
+		function(context) {
+			drawVisualization(context);
 
-			var url = "http://localhost:1080/cernercontext/?partnerId=999999999999999-9999999999999&mrn=" + pt.mrn + "&npi=" + pract.npi;
+			var url = "http://localhost:1080/cernercontext/?tenantId=" + context.tenantId "&mrn=" + context.patient.mrn + "&npi=" + context.practitioner.npi;
 			//        	  window.location = url;
 			console.log('launch Mirth Cerner Context channel: ' + url);
 		},
