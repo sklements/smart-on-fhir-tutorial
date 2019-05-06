@@ -24,7 +24,7 @@
 
 			var practitioner = {};
 			practitioner.type = "Practitioner";
-			practitioner.id = "605926"; // smart.tokenResponse.user;
+			practitioner.id = smart.tokenResponse.user; // "605926"
 
 			var practitionerRead = smart.api.read(practitioner);
 
@@ -49,7 +49,7 @@
 
 				practitioner = practitioner.data;
 				context.practitioner.id = practitioner.id;
-				context.practitioner.npi = "";
+				context.practitioner.npi = practitioner.id;
 				identifiers = practitioner.identifier;
 
 				for (var i = 0; i < identifiers.length; i++) {
